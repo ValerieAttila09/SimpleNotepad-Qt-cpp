@@ -1,0 +1,27 @@
+# ninja log v5
+30	7449	7822426595319499	SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+30	7449	7822426595319499	SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+30	7449	7822426595319499	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+30	7449	7822426595319499	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+7504	23731	7822426761335900	CMakeFiles/SimpleNotepad.dir/main.cpp.obj	caa2b80ea5ac6550
+7490	24400	7822426768341828	CMakeFiles/SimpleNotepad.dir/SimpleNotepad_autogen/mocs_compilation.cpp.obj	5c0be941cccb5db9
+234	1328	7822430767311914	SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+234	1328	7822430767311914	SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+234	1328	7822430767311914	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+234	1328	7822430767311914	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+1415	12436	7822431411041524	CMakeFiles/SimpleNotepad.dir/mainwindow.cpp.obj	55a142be4ad0c3aa
+12438	13213	7822431419211377	SimpleNotepad.exe	816467dc4d44c93c
+121	1406	7822441475832066	SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+121	1406	7822441475832066	SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+121	1406	7822441475832066	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+121	1406	7822441475832066	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+111	837	7822442881111770	SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+111	837	7822442881111770	SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+111	837	7822442881111770	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+111	837	7822442881111770	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+92	657	7822443268432503	SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+92	657	7822443268432503	SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+92	657	7822443268432503	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/timestamp	8382c7a9461fa398
+92	657	7822443268432503	C:/Users/LENOVO/OneDrive/Desktop/PrimaryCoding/Qt/SimpleNotepad/build/Desktop_Qt_6_10_0_llvm_mingw_64_bit-Debug/SimpleNotepad_autogen/mocs_compilation.cpp	8382c7a9461fa398
+730	10114	7822443394964536	CMakeFiles/SimpleNotepad.dir/mainwindow.cpp.obj	55a142be4ad0c3aa
+10114	10661	7822443400056635	SimpleNotepad.exe	816467dc4d44c93c
