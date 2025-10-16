@@ -29,5 +29,10 @@ class MainWindow : public QMainWindow
         void setBold();
         void setItalic();
         void setUnderline();
+        void zoomIn();
+        void zoomOut();
+        void resetZoom();
+        void toggleDarkMode();
+        void toggleWordWrap();
 };
 #endif // MAINWINDOW_H

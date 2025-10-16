@@ -6,6 +6,8 @@
 #include <QTextStream>
 #include <QFontDialog>
 #include <QTextCharFormat>
+#include <QPalette>
+#include <QTextOption>
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -14,18 +16,29 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::openFile);
     connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveFile);
     connect(ui->actionExit, &QAction::triggered, this, &MainWindow::exitApp);
+
     connect(ui->actionUndo, &QAction::triggered, ui->textEdit, &QTextEdit::undo);
     connect(ui->actionRedo, &QAction::triggered, ui->textEdit, &QTextEdit::redo);
     connect(ui->actionCut, &QAction::triggered, ui->textEdit, &QTextEdit::cut);
     connect(ui->actionCopy, &QAction::triggered, ui->textEdit, &QTextEdit::copy);
     connect(ui->actionPaste, &QAction::triggered, ui->textEdit, &QTextEdit::paste);
     connect(ui->actionSelect_All, &QAction::triggered, ui->textEdit, &QTextEdit::selectAll);
+
     connect(ui->actionFont, &QAction::triggered, this, &MainWindow::chooseFont);
     connect(ui->actionBold, &QAction::triggered, this, &MainWindow::setBold);
     connect(ui->actionItalic, &QAction::triggered, this, &MainWindow::setItalic);
     connect(ui->actionUnderline, &QAction::triggered, this, &MainWindow::setUnderline);
 
+    connect(ui->actionZoom_In, &QAction::triggered, this, &MainWindow::zoomIn);
+    connect(ui->actionZoom_Out, &QAction::triggered, this, &MainWindow::zoomOut);
+    connect(ui->actionReset_Zoom, &QAction::triggered, this, &MainWindow::resetZoom);
+    connect(ui->actionToggle_Dark_Mode, &QAction::triggered, this, &MainWindow::toggleDarkMode);
+    connect(ui->actionToggle_Word_Wrap, &QAction::triggered, this, &MainWindow::toggleWordWrap);
 }
+
+int currentZoom = 100;
+bool isDarkMode = false;
+bool isWordWrap = true;
 
 MainWindow::~MainWindow() {
     delete ui;
@@ -92,6 +105,48 @@ void MainWindow::setUnderline() {
     bool isUnderline = ui->textEdit->fontUnderline();
     format.setFontUnderline(!isUnderline);
     ui->textEdit->mergeCurrentCharFormat(format);
+}
+
+void MainWindow::zoomIn() {
+    currentZoom += 10;
+    ui->textEdit->zoomIn(1);
+}
+
+void MainWindow::zoomOut() {
+    if (currentZoom > 50) {
+        currentZoom -= 10;
+        ui->textEdit->zoomOut(1);
+    }
+}
+
+void MainWindow::resetZoom() {
+    ui->textEdit->zoomOut((currentZoom - 100) / 10);
+    currentZoom = 100;
+}
+
+void MainWindow::toggleDarkMode(){
+    QPalette p = ui->textEdit->palette();
+    if (!isDarkMode) {
+        p.setColor(QPalette::Base, QColor(40, 40, 40));
+        p.setColor(QPalette::Text, Qt::white);
+        ui->textEdit->setPalette(p);
+        isDarkMode = true;
+    } else {
+        p.setColor(QPalette::Base, Qt::white);
+        p.setColor(QPalette::Text, Qt::black);
+        ui->textEdit->setPalette(p);
+        isDarkMode = false;
+    }
+}
+
+void MainWindow::toggleWordWrap() {
+    if (!isWordWrap) {
+        ui->textEdit->setLineWrapMode(QTextEdit::NoWrap);
+        isWordWrap = false;
+    } else {
+        ui->textEdit->setLineWrapMode(QTextEdit::WidgetWidth);
+        isWordWrap = true;
+    }
 }
 
 void MainWindow::exitApp() {
