@@ -4,6 +4,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QFontDialog>
+#include <QTextCharFormat>
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
@@ -18,6 +20,10 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     connect(ui->actionCopy, &QAction::triggered, ui->textEdit, &QTextEdit::copy);
     connect(ui->actionPaste, &QAction::triggered, ui->textEdit, &QTextEdit::paste);
     connect(ui->actionSelect_All, &QAction::triggered, ui->textEdit, &QTextEdit::selectAll);
+    connect(ui->actionFont, &QAction::triggered, this, &MainWindow::chooseFont);
+    connect(ui->actionBold, &QAction::triggered, this, &MainWindow::setBold);
+    connect(ui->actionItalic, &QAction::triggered, this, &MainWindow::setItalic);
+    connect(ui->actionUnderline, &QAction::triggered, this, &MainWindow::setUnderline);
 
 }
 
@@ -57,6 +63,35 @@ void MainWindow::saveFile() {
     QTextStream out(&file);
     out << ui->textEdit->toPlainText();
     file.close();
+}
+
+void MainWindow::chooseFont() {
+    bool ok;
+    QFont font = QFontDialog::getFont(&ok, ui->textEdit->font(), this, "Pilih Font");
+    if (ok) {
+        ui->textEdit->setFont(font);
+    }
+}
+
+void MainWindow::setBold() {
+    QTextCharFormat format;
+    bool isBold = ui->textEdit->fontWeight() == QFont::Bold;
+    format.setFontWeight(isBold ? QFont::Normal : QFont::Bold);
+    ui->textEdit->mergeCurrentCharFormat(format);
+}
+
+void MainWindow::setItalic() {
+    QTextCharFormat format;
+    bool isItalic = ui->textEdit->fontItalic();
+    format.setFontItalic(!isItalic);
+    ui->textEdit->mergeCurrentCharFormat(format);
+}
+
+void MainWindow::setUnderline() {
+    QTextCharFormat format;
+    bool isUnderline = ui->textEdit->fontUnderline();
+    format.setFontUnderline(!isUnderline);
+    ui->textEdit->mergeCurrentCharFormat(format);
 }
 
 void MainWindow::exitApp() {

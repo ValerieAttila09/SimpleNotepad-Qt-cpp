@@ -34,6 +34,10 @@ public:
     QAction *actionCopy;
     QAction *actionPaste;
     QAction *actionSelect_All;
+    QAction *actionFont;
+    QAction *actionBold;
+    QAction *actionItalic;
+    QAction *actionUnderline;
     QWidget *centralwidget;
     QTextEdit *textEdit;
     QMenuBar *menubar;
@@ -68,6 +72,14 @@ public:
         actionPaste->setObjectName("actionPaste");
         actionSelect_All = new QAction(MainWindow);
         actionSelect_All->setObjectName("actionSelect_All");
+        actionFont = new QAction(MainWindow);
+        actionFont->setObjectName("actionFont");
+        actionBold = new QAction(MainWindow);
+        actionBold->setObjectName("actionBold");
+        actionItalic = new QAction(MainWindow);
+        actionItalic->setObjectName("actionItalic");
+        actionUnderline = new QAction(MainWindow);
+        actionUnderline->setObjectName("actionUnderline");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         textEdit = new QTextEdit(centralwidget);
@@ -106,6 +118,11 @@ public:
         menuOpen->addAction(actionCopy);
         menuOpen->addAction(actionPaste);
         menuOpen->addAction(actionSelect_All);
+        menuExit->addAction(actionFont);
+        menuExit->addSeparator();
+        menuExit->addAction(actionBold);
+        menuExit->addAction(actionItalic);
+        menuExit->addAction(actionUnderline);
 
         retranslateUi(MainWindow);
 
@@ -125,10 +142,14 @@ public:
         actionCopy->setText(QCoreApplication::translate("MainWindow", "Copy", nullptr));
         actionPaste->setText(QCoreApplication::translate("MainWindow", "Paste", nullptr));
         actionSelect_All->setText(QCoreApplication::translate("MainWindow", "Select All", nullptr));
+        actionFont->setText(QCoreApplication::translate("MainWindow", "Font...", nullptr));
+        actionBold->setText(QCoreApplication::translate("MainWindow", "Bold", nullptr));
+        actionItalic->setText(QCoreApplication::translate("MainWindow", "Italic", nullptr));
+        actionUnderline->setText(QCoreApplication::translate("MainWindow", "Underline", nullptr));
         menuNew->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuOpen->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuSave->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
-        menuExit->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
+        menuExit->setTitle(QCoreApplication::translate("MainWindow", "Format", nullptr));
     } // retranslateUi
 
 };

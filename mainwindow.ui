@@ -63,8 +63,13 @@
    </widget>
    <widget class="QMenu" name="menuExit">
     <property name="title">
-     <string>Help</string>
+     <string>Format</string>
     </property>
+    <addaction name="actionFont"/>
+    <addaction name="separator"/>
+    <addaction name="actionBold"/>
+    <addaction name="actionItalic"/>
+    <addaction name="actionUnderline"/>
    </widget>
    <addaction name="menuNew"/>
    <addaction name="menuOpen"/>
@@ -120,6 +125,26 @@
   <action name="actionSelect_All">
    <property name="text">
     <string>Select All</string>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="text">
+    <string>Font...</string>
+   </property>
+  </action>
+  <action name="actionBold">
+   <property name="text">
+    <string>Bold</string>
+   </property>
+  </action>
+  <action name="actionItalic">
+   <property name="text">
+    <string>Italic</string>
+   </property>
+  </action>
+  <action name="actionUnderline">
+   <property name="text">
+    <string>Underline</string>
    </property>
   </action>
  </widget>

@@ -25,5 +25,9 @@ class MainWindow : public QMainWindow
         void openFile();
         void saveFile();
         void exitApp();
+        void chooseFont();
+        void setBold();
+        void setItalic();
+        void setUnderline();
 };
 #endif // MAINWINDOW_H
